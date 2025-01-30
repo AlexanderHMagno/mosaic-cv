@@ -1,0 +1,7 @@
+# only load index.py and robots folder and run it
+bin/  
+include/
+lib/
+.gradio/
+.venv/
+.pyenv/
