@@ -3,8 +3,7 @@ import numpy as np
 import random
 import os
 from PIL import Image
-
-
+from imageComparison import ImageComparison
 
 class ImageProcessor:
     def __init__(self):
@@ -130,4 +129,8 @@ class ImageProcessor:
         if keep_image_size == "Original Size":
             grid_result = self.resize_image(image, grid_result)
 
-        return grid_result
+        # Compare the original image with the mosaic
+        image_comparison = ImageComparison(image, grid_result)
+        metrics = image_comparison.generate_metrics_explanation()
+        
+        return grid_result , metrics
