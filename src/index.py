@@ -1,11 +1,13 @@
 import gradio as gr
 from const import examples
-from mosaic import process_image
+from mosaic import ImageProcessor
 
+# Create an instance of the ImageProcessor class
+processor = ImageProcessor()
 
 # Create Gradio interface
 demo = gr.Interface(
-    fn=process_image,
+    fn=processor.process_image,
     inputs=[
         gr.Image(type="pil", label="Upload an Image"),
         gr.Slider(32, 128, step=8, value=32, label="Output Grid Size (e.g., 32x32)"),
