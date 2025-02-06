@@ -15,7 +15,10 @@ demo = gr.Interface(
         gr.Radio(choices=["Original Size","Resize to Grid Size"], label="Keep Image Size" ,value="Original Size"),
         
     ],
-    outputs=[gr.Image(type="pil", label="Processed Image with Grid Analysis"), gr.Textbox(label="Metrics")],
+    outputs=[
+        gr.Image(type="pil", label="Processed Image with Grid Analysis"), 
+        gr.Textbox(label="Metrics Explanation")
+    ],
     title="Image Grid Analysis",
     description="Upload an image and divide it into grids to analyze color or intensity data in each cell.",
     examples=examples

@@ -8,7 +8,6 @@ class ImageComparison:
         self.mosaic = np.array(mosaic)
 
     def compute_similarity_metrics(self):
-        
       # Resize the images to the same dimensions
       original = cv2.resize(self.original, (self.mosaic.shape[1], self.mosaic.shape[0]))
 
@@ -39,13 +38,6 @@ class ImageComparison:
           "Histogram Bhattacharyya": bhattacharyya
       }
 
-    def explain_metrics(self):
-        return {
-            "MSE": "Mean Squared Error",
-            "PSNR": "Peak Signal-to-Noise Ratio",
-            "Histogram Correlation": "Histogram Correlation",
-            "Histogram Chi-Square": "Histogram Chi-Square",
-        }
     
     def generate_metrics_explanation(self):
         """
