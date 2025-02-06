@@ -46,8 +46,6 @@ class ImageProcessor:
         height, width, _ = image.shape
         cell_height = height // grid_size
         cell_width = cell_height
-
-        print(f"from divide_and_analyze_grid cell_height: {cell_height}, cell_width: {cell_width}, image shape: {image.shape}")
         # Create a copy of the image for annotation
         annotated_image = image.copy()
         
@@ -82,8 +80,9 @@ class ImageProcessor:
         return blended_tile
 
     def add_tile_mapping(self, image, grid_size, tile_type):
-        print(f"tile_type: {tile_type}")
-        
+        """
+        Add tile mapping to the image.
+        """
         robot_images = random.sample(os.listdir('public/' + tile_type), 10)
         random_robot_image = random.choice(robot_images)
         robotina = cv2.imread(os.path.join('public/' + tile_type, random_robot_image))  # Loads in BGR format
@@ -96,10 +95,6 @@ class ImageProcessor:
         tile_h , tile_w = robotina.shape[:2]
         
         mosaic = np.zeros((tile_h * grid_size, tile_w * grid_size, 3), dtype=np.uint8)
-
-        print(f"mosaic shape: {mosaic.shape}")
-        print(f"robotina shape: {robotina.shape}")
-        print(f"image shape: {image.shape}")
         
         # Iterate over each pixel in the base image
         for i in range(h):
