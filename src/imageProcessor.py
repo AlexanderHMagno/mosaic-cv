@@ -29,7 +29,6 @@ class ImageProcessor:
         # Round down to nearest multiple of grid_size
         h = h - (h % grid_size)
         w = w - (w % grid_size)
-        print(f"h: {h}, w: {w}")
         # Resize to a fixed size keep aspect ratio  
         resized_image = cv2.resize(image, (w, h), interpolation=cv2.INTER_AREA)
         
@@ -52,7 +51,6 @@ class ImageProcessor:
         cell_height = grid_size
         cell_width = grid_size
 
-        print(cell_height, cell_width, grid_size, height, width)
         # Create a copy of the image for annotation
         annotated_image = image.copy()
         
@@ -99,7 +97,6 @@ class ImageProcessor:
         
         mosaic = image.copy()
         
-        print(f"h Final: {h}, w Final: {w}")
         # Iterate over each pixel in the base image
         for i in range(h):
             for j in range(w):
