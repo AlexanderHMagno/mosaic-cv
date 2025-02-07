@@ -62,11 +62,10 @@ The following results were obtained during the evaluation:
 
 ## Results
 
-- **Execution Time**: ~4.2 seconds for a 1920x1080 image.
-- **Memory Usage**: Peak memory usage ~150 MB during tile mapping.
-- **Output Quality**: Metrics indicate moderate similarity between the mosaic and the original image, with opportunities to enhance blending and tile matching.
+- **Execution Time**: ~3 seconds for a 1920x1920 image.
+- **Output Quality**: Metrics indicate lower similarity between the mosaic and the original image, with opportunities to enhance blending and tile matching.
 
-## Discussion
+## Additional Improvements
 
 This application demonstrates a functional and efficient pipeline for generating mosaics. The blending and tile mapping produce visually coherent results, but further improvements are possible:
 
@@ -74,9 +73,7 @@ This application demonstrates a functional and efficient pipeline for generating
 - **Blending Optimization**: Refining blending techniques can improve the mosaic’s fidelity to the original.
 - **Histogram Similarity**: Optimizing histogram metrics can achieve better color distribution similarity.
 
-## Conclusion
-
-The Mosaic Image Processing Application successfully implements a structured workflow for generating mosaics. Future updates will focus on:
+## Future updates will focus on:
 
 - Enhancing image similarity by optimizing blending techniques.
 - Increasing tile diversity for better results.
