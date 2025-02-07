@@ -10,10 +10,8 @@ demo = gr.Interface(
     fn=processor.process_image,
     inputs=[
         gr.Image(type="pil", label="Upload an Image"),
-        gr.Slider(2, 128, step=8, value=32, label="Output Tile Size (e.g., 16x16)"),
-        gr.Radio(choices=["Robots","Cats", "Humans"], label="Tile Type" ,value="Robots"),
-        gr.Radio(choices=["Original Size","Resize to Grid Size"], label="Keep Image Size" ,value="Original Size"),
-        
+        gr.Slider(8, 32, step=4, value=8, label="Output Tile Size (e.g., 16x16)"),
+        gr.Radio(choices=["Robots","Cats", "Humans"], label="Tile Type" ,value="Robots"),         
     ],
     outputs=[
         gr.Image(type="pil", label="Processed Image with Grid Analysis"), 

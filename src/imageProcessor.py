@@ -35,7 +35,7 @@ class ImageProcessor:
         
         return resized_image
 
-    def divide_and_analyze_grid(self, image, grid_size, keep_image_size):
+    def divide_and_analyze_grid(self, image, grid_size):
         """
         Divide the image into a grid and classify each grid cell by average intensity or dominant color.
         Args:
@@ -120,14 +120,14 @@ class ImageProcessor:
         image = np.array(image)
         return cv2.resize(grid_result, (image.shape[1], image.shape[0]), interpolation=cv2.INTER_AREA)
 
-    def process_image(self, image, grid_size, tile_type, keep_image_size):
+    def process_image(self, image, grid_size, tile_type):
         """
         Full pipeline: Preprocess the image, divide it into grids, and analyze.
         """
         # Preprocess the image
         image = self.preprocess_image(image, grid_size)
         # Divide into grids and analyze
-        grid_result = self.divide_and_analyze_grid(image, grid_size, keep_image_size)
+        grid_result = self.divide_and_analyze_grid(image, grid_size)
 
         # Add tile mapping
         grid_result = self.add_tile_mapping(grid_result, grid_size, tile_type.lower())
